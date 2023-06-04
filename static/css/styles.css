@@ -1,0 +1,8 @@
+.header {
+    background: url(../img/bg.jpg) no-repeat top center;
+    height: 150px;
+}
+
+audio::-webkit-media-controls-panel {
+    background-color: #56AEFF;
+}
