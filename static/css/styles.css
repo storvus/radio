@@ -1,6 +1,9 @@
 .header {
-    background: url(../img/bg.jpg) no-repeat top center;
     height: 150px;
+}
+
+.header img {
+    height: 100%;
 }
 
 audio::-webkit-media-controls-panel {
