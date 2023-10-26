@@ -15,9 +15,11 @@ def update_title(m) =
  end
 end
 
-music1 = playlist(mode="randomize", reload_mode="rounds", reload=1, "/home/torvus/Music")
-security = single("/home/torvus/Music/free.mp3")
-radio = random([music1])
+music = playlist(mode="randomize", reload_mode="rounds", reload=1, "/home/torvus/Music")
+jingles = playlist(mode="randomize", reload_mode="rounds", reload=1, "/home/torvus/Jingles")
+# security = single("/home/torvus/Music/free.mp3")
+radio = music
+radio = random(weights=[1, 1], [jingles, music])
 # radio = fallback(track_sensitive = false, [smart_crossfade(fallback([request.queue(id="request"), radio])),security])
 # radio = fallback([radio, security])
 radio = mksafe(radio)
