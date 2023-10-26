@@ -43,7 +43,7 @@
             </div>
         </div>
         <script type="text/javascript">
-            fetch("http://185.170.213.81:8003/status-json.xsl")
+            fetch("https://icecast.storv.us/status-json.xsl")
                 .then(response => response.json())
                 .then((data) => {
                     document.getElementById("currently-playing").innerHTML = data.icestats.source.title
