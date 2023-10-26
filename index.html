@@ -44,11 +44,9 @@
         </div>
         <script type="text/javascript">
             window.onload = function() {
-                alert(fetch)
                 fetch("https://icecast.storv.us/status-json.xsl")
-                    .then(response => alert(response.json()))
+                    .then(response => response.json())
                     .then((data) => {
-                        alert(3)
                         document.getElementById("currently-playing").innerHTML = data.icestats.source.title
                         document.getElementById("radio-info").innerHTML = data.icestats.source.server_description
                     })
