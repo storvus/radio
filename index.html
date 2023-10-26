@@ -43,12 +43,16 @@
             </div>
         </div>
         <script type="text/javascript">
-            fetch("https://icecast.storv.us/status-json.xsl")
-                .then(response => response.json())
-                .then((data) => {
-                    document.getElementById("currently-playing").innerHTML = data.icestats.source.title
-                    document.getElementById("radio-info").innerHTML = data.icestats.source.server_description
-                })
+            window.onload = function() {
+                alert(fetch)
+                fetch("https://icecast.storv.us/status-json.xsl")
+                    .then(response => alert(response.json()))
+                    .then((data) => {
+                        alert(3)
+                        document.getElementById("currently-playing").innerHTML = data.icestats.source.title
+                        document.getElementById("radio-info").innerHTML = data.icestats.source.server_description
+                    })
+            }
         </script>
     </body>
 </html>
