@@ -44,12 +44,14 @@
         </div>
         <script type="text/javascript">
             window.onload = function() {
-                fetch("https://icecast.storv.us/status-json.xsl")
-                    .then(response => response.json())
-                    .then((data) => {
-                        document.getElementById("currently-playing").innerHTML = data.icestats.source.title
-                        document.getElementById("radio-info").innerHTML = data.icestats.source.server_description
-                    })
+                setInterval(() => {
+                    fetch("https://icecast.storv.us/status-json.xsl")
+                        .then(response => response.json())
+                        .then((data) => {
+                            document.getElementById("currently-playing").innerHTML = data.icestats.source.title
+                            document.getElementById("radio-info").innerHTML = data.icestats.source.server_description
+                        })
+                }, 2000);
             }
         </script>
     </body>
